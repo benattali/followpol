@@ -1,4 +1,16 @@
 {% extends 'layout.html' %}
 {% block content %}
-	<h1>score</h1>
+    <p>handle is {{ twitter_handle }}</p>
+    <br>
+    {% for line in csv_data %}
+        {% if line[3] == twitter_handle %}
+            <p>Their name is {{ line[4] }}</p>
+            <p>The parliament name is {{ line[8] }}</p>
+            <p>The party they are in is {{ line[9] }}</p>
+            <p>{{ line[13] }} people are following them</p>
+            <p>They are following  {{ line[14] }} people</p>
+        {% endif %}
+    {% endfor %}
+
+    <a class="btn btn-outline-info" href="{{ url_for('main.home') }}">Search for another member of parliament</a>
 {% endblock content %}

@@ -1,11 +1,26 @@
-from flask import Blueprint, render_template
+from flask import Blueprint, render_template, flash
+from followpol.main.forms import TwitterHandleForm
+import csv
 
 main = Blueprint('main', __name__)
 
-@main.route('/')
-@main.route('/home')
+@main.route('/', methods=['GET', 'POST'])
+@main.route('/home', methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    form = TwitterHandleForm()
+    if form.validate_on_submit():
+        twitter_handle = form.handle.data
+        flash(f'Results for {form.handle.data}...', 'success')
+
+        csv_data = []
+        with open('followpol/data_files/v1test.csv', 'r') as csv_file:
+            csv_reader = csv.reader(csv_file)
+
+            for line in csv_reader:
+                csv_data.append(line)
+
+        return render_template('score.html', twitter_handle=twitter_handle, csv_data=csv_data)
+    return render_template('home.html', form=form)
 
 @main.route('/score')
 def score():
