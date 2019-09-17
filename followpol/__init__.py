@@ -17,7 +17,9 @@ def create_app(config_class=Config):
 
     from followpol.admin.routes import admin
     from followpol.main.routes import main
+    from followpol.errors.handlers import errors
     app.register_blueprint(admin)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app
