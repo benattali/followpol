@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, url_for, flash, redirect
 from flask_login import login_user, current_user, logout_user, login_required
-from followpol import app, db
+from followpol import db
 from followpol.models import User
 from followpol.admin.forms import LoginForm
 
