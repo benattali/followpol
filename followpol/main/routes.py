@@ -13,7 +13,7 @@ def home():
         flash(f'Results for {form.handle.data}...', 'success')
 
         csv_data = []
-        with open('followpol/data_files/v1test.csv', 'r') as csv_file:
+        with open('followpol/data_files/twitter_data.csv', 'r') as csv_file:
             csv_reader = csv.reader(csv_file)
 
             for line in csv_reader:
