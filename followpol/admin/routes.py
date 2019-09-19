@@ -1,8 +1,9 @@
-from flask import Blueprint, render_template, url_for, flash, redirect
+import os
+from flask import Blueprint, render_template, url_for, flash, redirect, current_app
 from flask_login import login_user, current_user, logout_user, login_required
 from followpol import db
 from followpol.models import User
-from followpol.admin.forms import LoginForm
+from followpol.admin.forms import LoginForm, UploadCSV
 
 admin = Blueprint('admin', __name__)
 
@@ -25,7 +26,20 @@ def logout():
 	logout_user()
 	return redirect(url_for('main.home'))
 
-@admin.route('/adminpage')
+def save_csv(form_csv):
+	_, f_ext = os.path.splitext(form_csv.filename)
+	csv_fn = "twitter_data" + f_ext
+	csv_path = os.path.join(current_app.root_path, 'data_files', csv_fn)
+	form_csv.save(csv_path)
+
+	return csv_fn
+
+@admin.route('/adminpage', methods=['GET', 'POST'])
 @login_required
 def adminpage():
-	return render_template('adminpage.html', title='Admin Pages')
+	form = UploadCSV()
+	if form.validate_on_submit():
+		if form.csv.data:
+			csv_file = save_csv(form.csv.data)
+
+	return render_template('adminpage.html', title='Admin Pages', form=form)
