@@ -51,6 +51,5 @@ def adminpage():
 		if form.csv.data:
 			csv_file = save_csv(form.csv.data)
 			flash('The file was successfully uploaded', 'info')
-	else:
-		flash('Looks like this file is not in a CSV format', 'danger')
+
 	return render_template('adminpage.html', title='Admin Pages', form=form)
