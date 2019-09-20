@@ -31,8 +31,6 @@ def save_csv(form_csv):
 	_, f_ext = os.path.splitext(form_csv.filename)
 	csv_fn = "twitter_data" + f_ext
 	csv_path = os.path.join(current_app.root_path, 'data_files', csv_fn)
-	
-
 
 	previous_csv = []
 	with open('followpol/data_files/twitter_data.csv', 'r') as csv_file:
@@ -42,10 +40,9 @@ def save_csv(form_csv):
 			previous_csv.append(line)
 
 
-	num_of_headers = len(csv_fn[0])
-	for line in csv_fn:
-		print(previous_csv[index])
-	return False
+	if len(csv_fn[0]) != len(previous_csv[0]):
+		return False
+	
 
 
 	form_csv.save(csv_path)
