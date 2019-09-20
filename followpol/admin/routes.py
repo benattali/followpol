@@ -39,12 +39,6 @@ def save_csv(form_csv):
 		for line in csv_reader:
 			previous_csv.append(line)
 
-
-	if len(csv_fn[0]) != len(previous_csv[0]):
-		return False
-	
-
-
 	form_csv.save(csv_path)
 
 	return csv_fn
@@ -56,7 +50,7 @@ def adminpage():
 	if form.validate_on_submit():
 		if form.csv.data:
 			csv_file = save_csv(form.csv.data)
-			if csv_file == False:
-				flash('The file headings do not match the previous file headings', 'danger')
-
+			flash('The file was successfully uploaded', 'info')
+	else:
+		flash('Looks like this file is not in a CSV format', 'danger')
 	return render_template('adminpage.html', title='Admin Pages', form=form)
