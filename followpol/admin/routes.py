@@ -4,6 +4,7 @@ from flask_login import login_user, current_user, logout_user, login_required
 from followpol import db
 from followpol.models import User
 from followpol.admin.forms import LoginForm, UploadCSV
+import csv
 
 admin = Blueprint('admin', __name__)
 
@@ -30,6 +31,23 @@ def save_csv(form_csv):
 	_, f_ext = os.path.splitext(form_csv.filename)
 	csv_fn = "twitter_data" + f_ext
 	csv_path = os.path.join(current_app.root_path, 'data_files', csv_fn)
+	
+
+
+	previous_csv = []
+	with open('followpol/data_files/twitter_data.csv', 'r') as csv_file:
+		csv_reader = csv.reader(csv_file)
+
+		for line in csv_reader:
+			previous_csv.append(line)
+
+
+	num_of_headers = len(csv_fn[0])
+	for line in csv_fn:
+		print(previous_csv[index])
+	return False
+
+
 	form_csv.save(csv_path)
 
 	return csv_fn
@@ -41,5 +59,7 @@ def adminpage():
 	if form.validate_on_submit():
 		if form.csv.data:
 			csv_file = save_csv(form.csv.data)
+			if csv_file == False:
+				flash('The file headings do not match the previous file headings', 'danger')
 
 	return render_template('adminpage.html', title='Admin Pages', form=form)

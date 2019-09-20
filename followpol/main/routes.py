@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, flash
+from flask import Blueprint, render_template, flash, url_for
 from followpol.main.forms import TwitterHandleForm
 import csv
 
