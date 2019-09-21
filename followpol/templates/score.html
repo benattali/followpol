@@ -12,5 +12,10 @@
         {% endif %}
     {% endfor %}
 
-    <a class="btn btn-outline-info" href="{{ url_for('main.home') }}">Search for another member of parliament</a>
+    <div id="chart">
+       <embed type="image/svg+xml" src= {{ chart|safe }} />
+    </div>
+    <br>
+
+    <a class="btn btn-outline-info mb-2" href="{{ url_for('main.home') }}">Search for another member of parliament</a>
 {% endblock content %}
