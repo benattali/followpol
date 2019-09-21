@@ -9,8 +9,7 @@
             {{ form.hidden_tag() }}
         <div class="form-group">
             {{ form.csv.label() }}
-            <div onclick="showMessage()">
-                
+            <div onclick="showMessage()">      
                 {{ form.csv(class="form-control-file") }}
             </div>
             {% if form.csv.errors %}

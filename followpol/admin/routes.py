@@ -5,7 +5,6 @@ from followpol import db
 from followpol.models import User
 from followpol.admin.forms import LoginForm, UploadCSV
 import csv
-from ctypes import *
 
 admin = Blueprint('admin', __name__)
 
@@ -32,14 +31,6 @@ def save_csv(form_csv):
 	_, f_ext = os.path.splitext(form_csv.filename)
 	csv_fn = "twitter_data" + f_ext
 	csv_path = os.path.join(current_app.root_path, 'data_files', csv_fn)
-
-	# previous_csv = []
-	# with open('followpol/data_files/twitter_data.csv', 'r') as csv_file:
-	# 	csv_reader = csv.reader(csv_file)
-
-	# 	for line in csv_reader:
-	# 		previous_csv.append(line)
-
 	form_csv.save(csv_path)
 
 	return csv_fn
