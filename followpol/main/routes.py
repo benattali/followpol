@@ -41,7 +41,6 @@ def home():
             for line in csv_reader:
                 csv_data.append(line)
 
-
         chart = pieChart(csv_data)
 
         return render_template('score.html', twitter_handle=twitter_handle, csv_data=csv_data, chart=chart)
