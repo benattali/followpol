@@ -5,6 +5,27 @@ import pygal
 
 main = Blueprint('main', __name__)
 
+def pieChart(form_data):
+    following = {}
+    for index, fol in enumerate(form_data):
+        if index == 0:
+            continue
+        elif fol[14] in following:
+            following[fol[14]] += 1
+        else:
+            following[fol[14]] = 1
+
+    pie_chart = pygal.Pie()
+    pie_chart.title = 'How many people do they follow?'
+    for item in following.items():
+        print (item[0])
+        print (item[1])
+        pie_chart.add(item[0], item[1])
+    pie_chart.render()
+    chart = pie_chart.render_data_uri()
+
+    return chart
+
 @main.route('/', methods=['GET', 'POST'])
 @main.route('/home', methods=['GET', 'POST'])
 def home():
@@ -21,15 +42,7 @@ def home():
                 csv_data.append(line)
 
 
-        pie_chart = pygal.Pie()
-        pie_chart.title = 'Browser usage in February 2012 (in %)'
-        pie_chart.add('IE', 19.5)
-        pie_chart.add('Firefox', 36.6)
-        pie_chart.add('Chrome', 36.3)
-        pie_chart.add('Safari', 4.5)
-        pie_chart.add('Opera', 2.3)
-        pie_chart.render()
-        chart = pie_chart.render_data_uri()
+        chart = pieChart(csv_data)
 
         return render_template('score.html', twitter_handle=twitter_handle, csv_data=csv_data, chart=chart)
     return render_template('home.html', form=form)
