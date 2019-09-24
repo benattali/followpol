@@ -16,48 +16,56 @@
 	{% endif %}
 </head>
 <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-        <a class="navbar-brand" href="{{ url_for('main.home') }}">
-            <img src="/static/images/logo_words.png" alt="Cosmonauts and Kings logo with the word FollowPol">
-        </a>
-        <button class="navbar-toggler burger-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+    <div class="d-flex justify-content-start">
+        <div class="side-panel">
+            
+        </div>
+        
+        <div class="main-page">
+            <div class="navbar navbar-expand-sm navbar-light navbar-followpol">
+                <a class="navbar-brand" href="{{ url_for('main.home') }}">
+                    <img src="/static/images/logo_words.png" alt="Cosmonauts and Kings logo with the word FollowPol">
+                </a>
+                <button class="navbar-toggler burger-menu" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
 
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="dropdown-item" href="https://www.cosmonautsandkings.com" target="_blank">
-                        <img src="/static/images/green-button.png" alt="Green button"> Über Cosmaunts and Kings
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="dropdown-item" href="https://www.cosmonautsandkings.com" target="_blank">
-                        <img src="/static/images/green-button.png" alt="Green button"> Über FollowPol
-                    </a>
-                </li>
-                <li class="nav-item">
-                    <a class="dropdown-item" href="https://www.cosmonautsandkings.com" target="_blank">
-                        <img src="/static/images/green-button.png" alt="Green button"> Kontakt
-                    </a>
-                </li>
-            </ul>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="dropdown-item" href="https://www.cosmonautsandkings.com" target="_blank">
+                                <img src="/static/images/green-button.png" alt="Green button"> Über Cosmaunts and Kings
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="https://www.cosmonautsandkings.com" target="_blank">
+                                <img src="/static/images/green-button.png" alt="Green button"> Über FollowPol
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="dropdown-item" href="https://www.cosmonautsandkings.com" target="_blank">
+                                <img src="/static/images/green-button.png" alt="Green button"> Kontakt
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        	<div class="container">
+        		{% with messages = get_flashed_messages(with_categories=true) %}
+        			{% if messages %}
+        				{% for category, message in messages %}
+        					<div class="alert alert-{{ category }}">
+        						{{ message }}
+        					</div>
+        				{% endfor %}
+        			{% endif %}
+        		{% endwith %}
+        		{% block content %}{% endblock content %}
+        	</div>
         </div>
     </div>
-
-	<div class="container">
-		{% with messages = get_flashed_messages(with_categories=true) %}
-			{% if messages %}
-				{% for category, message in messages %}
-					<div class="alert alert-{{ category }}">
-						{{ message }}
-					</div>
-				{% endfor %}
-			{% endif %}
-		{% endwith %}
-		{% block content %}{% endblock content %}
-	</div>
 
 	<!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

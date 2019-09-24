@@ -3,29 +3,32 @@ body {
   background-position: right 0;
   background-repeat: no-repeat;
   background-size: contain;
-  color: #333333;
-  margin-top: 5rem;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: #444444;
+.side-panel {
+  background: #5A6876;
+  height: 100vh;
+  width: 30vw;
 }
 
-.burger-menu {
-  background: #287D89;
+.main-page {
+  height: 100vh;
+  width: 70vw;
+  margin-top: 8px;
 }
 
-.navbar-lewagon {
+.navbar-followpol {
   justify-content: space-between;
-  background: white;
+  background: none;
 }
 
-.navbar-lewagon .navbar-collapse {
+.navbar-followpol .navbar-collapse {
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.burger-menu {
+  border: 1px solid #287D89 !important;
+  background: none;
 }
 
 /* Alert popup */
