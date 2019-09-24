@@ -18,8 +18,6 @@ def pieChart(form_data):
     pie_chart = pygal.Pie()
     pie_chart.title = 'How many people do they follow?'
     for item in following.items():
-        print (item[0])
-        print (item[1])
         pie_chart.add(item[0], item[1])
     pie_chart.render()
     chart = pie_chart.render_data_uri()

@@ -7,19 +7,25 @@ body {
 
 .side-panel {
   background: #5A6876;
-  height: 100vh;
-  width: 30vw;
+  min-height: 100vh;
+  width: 25vw;
+  padding: 1.5rem;
+  color: #f4f8fb; /* white */
+}
+
+.side-panel p {
+  font-size: 20px;
 }
 
 .main-page {
   height: 100vh;
-  width: 70vw;
-  margin-top: 8px;
+  width: 75vw;
 }
 
 .navbar-followpol {
   justify-content: space-between;
   background: none;
+  padding: 1rem 2.5rem !important;
 }
 
 .navbar-followpol .navbar-collapse {
@@ -35,7 +41,7 @@ body {
 .warning {
   padding: 20px;
   background-color: #FAA741;
-  color: white;
+  color: #f4f8fb;
   margin-bottom: 15px;
 }
 
@@ -53,4 +59,42 @@ body {
 
 .closebtn:hover {
   color: black;
+}
+
+.pie-chart {
+  width: 200px;
+  height: 200px;
+}
+
+.navbar-links a:hover {
+  text-decoration: none;
+}
+
+.links {
+  color: #f4f8fb;
+}
+
+.links-navbar {
+  color: #287D89; /* green */
+  margin: 0 15px;
+}
+
+li a {
+  transition: 0.3s;
+}
+
+li a:hover {
+  text-decoration: none;
+  color: #FEC95C; /* yellow */
+  font-weight: 800;
+}
+
+span a {
+  transition: 0.3s;
+}
+
+span a:hover {
+  text-decoration: none;
+  color: #FEC95C;
+  font-weight: 800;
 }
