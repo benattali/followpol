@@ -1,6 +1,5 @@
 {% extends 'layout.html' %}
 {% block content %}
-	<h1>Admin page</h1>
 	<h3>Logged in with {{ current_user.email }}</h3>
     <br>
     <br>
@@ -23,7 +22,7 @@
               <strong>You are about to upload a new CSV file.</strong>
             </div>
         <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn-style") }}
         </div>
     </form>
 {% endblock content %}

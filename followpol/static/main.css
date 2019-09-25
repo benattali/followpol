@@ -3,6 +3,7 @@ body {
   background-position: right 0;
   background-repeat: no-repeat;
   background-size: contain;
+  color: #1C1C1C;
 }
 
 .side-panel {
@@ -105,9 +106,9 @@ span a:hover {
 }
 
 .btn-style {
-  background-color: #287D89;
-  border: none;
-  color: #f4f8fb;
+  background-color: #f4f8fb;
+  color: #287D89;
+  border: 1px solid #287D89;
   border-radius: 3px;
   padding: 12px;
   width: 35%;
@@ -116,7 +117,12 @@ span a:hover {
 }
 
 .btn-style:hover {
-  background-color: #f4f8fb;
-  color: #287D89;
-  border: 1px solid #287D89;
+  background-color: #287D89;
+  color: #f4f8fb;
+  border: none;
+  text-decoration: none;
+}
+
+.home-description {
+  width: 45%;
 }

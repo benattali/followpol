@@ -1,7 +1,7 @@
 {% extends 'layout.html' %}
 {% block content %}
     <div class="container">
-        <p>handle is {{ twitter_handle }}</p>
+        <h3>Results for {{ twitter_handle }}</h3>
         <br>
         {% for line in csv_data %}
             {% if line[3] == twitter_handle %}
@@ -17,6 +17,6 @@
            <embed class="pie-chart" type="image/svg+xml" src= {{ chart|safe }} />
         </div>
         
-        <a class="btn btn-outline-info mb-2" href="{{ url_for('main.home') }}">Search for another member of parliament</a>
+        <a class="btn-style mb-2" href="{{ url_for('main.home') }}">Search for another member of parliament</a>
     </div>
 {% endblock content %}

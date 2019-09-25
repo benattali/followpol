@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "select2": "^4.0.10"
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.2"
   }
 }
