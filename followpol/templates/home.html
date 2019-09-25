@@ -3,14 +3,12 @@
     <form method="POST" action="">
         {{ form.hidden_tag() }}
         <fieldset class="form-group">
-            <legend class="border-bottom mb-4">Search a handle</legend>
             <div class="form-group">
-                {{ form.handle.label(class="form-control-label") }}
-                {{ form.handle(class="form-control form-control-lg") }}
+                {{ form.handle(class="form-control form-control-lg form-style") }}
             </div>
         </fieldset>
         <div class="form-group">
-            {{ form.submit(class="btn btn-outline-info") }}
+            {{ form.submit(class="btn-style") }}
         </div>
     </form>
 {% endblock content %}

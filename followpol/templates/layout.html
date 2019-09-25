@@ -28,12 +28,12 @@
             <br>
             <span>
                 <a class="links" href="https://www.cosmonautsandkings.com" target="_blank">
-                    <img src="/static/images/green-button.png" alt="Green button"> Über FollowPol
+                    <img src="/static/images/yellow-button.png" alt="Green button"> Über FollowPol
                 </a>
             </span>
         </div>
         
-        <div class="main-page">
+        <div class="main-page container-followpol">
             <div class="navbar navbar-expand-sm navbar-light navbar-followpol">
                 <a class="navbar-brand" href="{{ url_for('main.home') }}">
                     <img src="/static/images/logo_words.png" alt="Cosmonauts and Kings logo with the word FollowPol">
@@ -63,7 +63,7 @@
                 </div>
             </div>
 
-        	<div class="container">
+        	<div class="container-followpol">
         		{% with messages = get_flashed_messages(with_categories=true) %}
         			{% if messages %}
         				{% for category, message in messages %}
