@@ -194,4 +194,9 @@ span a:hover {
   .icon-toggle-at {
     display: none;
   }
+  input,
+  input::-webkit-input-placeholder {
+    font-size: 14px;
+    line-height: 3;
+  }
 }
