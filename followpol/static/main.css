@@ -16,12 +16,14 @@ body {
 
 .side-panel p {
   font-size: 20px;
+  flex: 1;
 }
 
 .main-page {
   height: 100vh;
   width: 75vw;
   margin: 0 3rem;
+  flex: 1;
 }
 
 .navbar-followpol {
@@ -157,6 +159,10 @@ span a:hover {
   display: none;
 }
 
+.page-layout {
+  display: flex;
+}
+
 @media (max-width: 768px) {
   .icon-toggle-search {
     display: none;
@@ -168,7 +174,15 @@ span a:hover {
     display: unset;
   }
   .side-panel {
+    order: 2;
     width: 100vw;
+    min-height: auto;
+  }
+  .main-page {
+    order: 1;
+  }
+  .page-layout {
+    flex-direction: column;
   }
 }
 
