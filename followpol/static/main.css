@@ -180,6 +180,7 @@ span a:hover {
   }
   .main-page {
     order: 1;
+    margin-bottom: 16px;
   }
   .page-layout {
     flex-direction: column;
