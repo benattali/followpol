@@ -3,5 +3,5 @@ from wtforms import StringField, SubmitField
 from wtforms.validators import DataRequired
 
 class TwitterHandleForm(FlaskForm):
-    handle = StringField('Handle', validators=[DataRequired()], render_kw={"placeholder": "Twitter-Handle"})
-    submit = SubmitField('Jetzt mdB-Follower*innen berechnen!')
+    handle = StringField('Handle', validators=[DataRequired()], render_kw={"placeholder": "Handle"})
+    submit = SubmitField('Suche')
