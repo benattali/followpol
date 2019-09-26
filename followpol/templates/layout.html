@@ -9,6 +9,8 @@
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='main.css') }}">
     <link rel="icon" type="image/png" href="/static/images/logo.png">
 
+    {{ fontawesome_html() }}
+
 	{% if title %}
 		<title>FollowPol - {{ title }}</title>
 	{% else %}
@@ -28,7 +30,7 @@
             <br>
             <span>
                 <a class="links" href="https://www.cosmonautsandkings.com" target="_blank">
-                    <img src="/static/images/yellow-button.png" alt="Green button"> Über FollowPol
+                    <img src="/static/images/yellow-button.png" alt="Yellow button"> Über FollowPol
                 </a>
             </span>
         </div>

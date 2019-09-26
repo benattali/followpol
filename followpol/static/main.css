@@ -126,3 +126,23 @@ span a:hover {
 .home-description {
   width: 45%;
 }
+
+
+
+
+
+
+.input-icons {
+  position: relative;
+}
+
+.input-icons i { 
+  position: absolute;
+  top: 25%;
+  left: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.input-field {
+  padding-left: 2rem;
+}
