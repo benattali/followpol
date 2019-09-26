@@ -7,13 +7,14 @@
     </div>
     <form method="POST" action="">
         {{ form.hidden_tag() }}
-        <fieldset class="form-group mb-1">
-            <div class="form-group input-icons">
-                <i class="fas fa-at"></i>
+        <fieldset class="form-group mb-1 fieldset-width">
+            <div class="form-group icon">
+                <i class="fas fa-at icon-at"></i>
                 {{ form.handle(class="form-control form-control-lg form-style input-field") }}
+                <i class="fas fa-search icon-search"></i>
             </div>
         </fieldset>
-        <div class="form-group">
+        <div class="form-group fieldset-width">
             {{ form.submit(class="btn-style") }}
         </div>
     </form>
