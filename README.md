@@ -2,4 +2,6 @@
 
 ### A web application that provides you with data on German political figures through a Twitter handle
 
-#### pip install flask
+### How to run it locally (using python 3.x)
+#### pip3 install flask
+#### pip3 install flask-wtf
