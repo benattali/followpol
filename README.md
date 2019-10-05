@@ -9,4 +9,4 @@
 * pip3 install flask-login
 * pip3 install Flask-FontAwesome
 * pip3 install pygal
-* Set environment variables for SECRET_KEY and SQLALCHEMY_DATABASE_URI
+* Set environment variables for SECRET_KEY
