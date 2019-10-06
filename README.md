@@ -10,3 +10,5 @@
 * `pip3 install Flask-FontAwesome`
 * `pip3 install pygal`
 * Set environment variables for SECRET_KEY
+
+### To run the app locally run `python3 application.py`
