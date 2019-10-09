@@ -1,8 +1,10 @@
 # followpol
 
-### A web application that provides you with data on German political figures through a Twitter handle
+A web application that provides you with data on German political figures through a Twitter handle
 
-### How to run it locally (using python 3.x)
+## Installation
+#### Assuming python3 is installed, to run locally follow these commands
+#### These commands should only be done once
 * `pip3 install flask`
 * `pip3 install flask-wtf`
 * `pip3 install flask-sqlalchemy`
@@ -11,4 +13,4 @@
 * `pip3 install pygal`
 * Set environment variables for SECRET_KEY
 
-### To run the app locally run `python3 application.py`
+## To run the app locally run `python3 application.py`
